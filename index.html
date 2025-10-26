@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,14 +14,14 @@
     .container { max-width:1000px; margin:0 auto; padding:20px; }
 
     /* Header */
-    header { text-align:center; padding:100px 20px; }
+    header { text-align:center; padding:100px 20px; position:relative; }
+    .language-switcher { position:absolute; top:20px; right:20px; }
+    .language-switcher img { width:30px; cursor:pointer; margin-left:10px; }
     header h1 { font-size:3rem; margin-bottom:10px; opacity:0; transform:translateY(30px); animation:fadeUp 1s forwards; }
     header p { font-size:1.2rem; opacity:0; transform:translateY(30px); animation:fadeUp 1s forwards; animation-delay:0.3s; }
 
     /* Keyframes */
-    @keyframes fadeUp {
-      to { opacity:1; transform:translateY(0); }
-    }
+    @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
 
     /* Section Titles */
     section h2 { font-size:2rem; margin-bottom:20px; text-align:center; }
@@ -49,44 +49,50 @@
 
   <!-- Header / Hero Section -->
   <header>
-    <h1>Merhaba, Ben Gizem</h1>
-    <p>Yazılım geliştirici & interaktif portföy</p>
+    <div class="language-switcher">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Flag_of_Turkey.svg" id="tr">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" id="ru">
+    </div>
+    <h1 data-tr="Merhaba, Ben Gizem" data-ru="Привет, я Гизем">Привет, я Гизем</h1>
+    <p data-tr="Yazılım geliştirici & interaktif portföy" data-ru="Разработчик программного обеспечения & интерактивное портфолио">
+      Разработчик программного обеспечения & интерактивное портфолио
+    </p>
   </header>
 
   <!-- Projects Section -->
   <section class="projects-section container">
-    <h2>Projelerim</h2>
+    <h2 data-tr="Projelerim" data-ru="Мои проекты">Мои проекты</h2>
     <div class="projects">
       <div class="project-card">
-        <h3>Proje 1</h3>
-        <p>React ile yapılmış modern web uygulaması.</p>
+        <h3 data-tr="Proje 1" data-ru="Проект 1">Проект 1</h3>
+        <p data-tr="React ile yapılmış modern web uygulaması." data-ru="Современное веб-приложение на React.">Современное веб-приложение на React.</p>
       </div>
       <div class="project-card">
-        <h3>Proje 2</h3>
-        <p>Node.js & Express API geliştirme projesi.</p>
+        <h3 data-tr="Proje 2" data-ru="Проект 2">Проект 2</h3>
+        <p data-tr="Node.js & Express API geliştirme projesi." data-ru="Проект по разработке API на Node.js & Express.">Проект по разработке API на Node.js & Express.</p>
       </div>
       <div class="project-card">
-        <h3>Proje 3</h3>
-        <p>Python & Flask ile veri analizi uygulaması.</p>
+        <h3 data-tr="Proje 3" data-ru="Проект 3">Проект 3</h3>
+        <p data-tr="Python & Flask ile veri analizi uygulaması." data-ru="Приложение для анализа данных на Python & Flask.">Приложение для анализа данных на Python & Flask.</p>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
   <section class="about container">
-    <h2>Hakkımda</h2>
-    <p>
-      Yazılım geliştirme tutkunu bir geliştirici olarak web ve backend teknolojilerinde projeler üretiyorum. 
-      Amacım modern, etkili ve kullanıcı dostu deneyimler yaratmak.
+    <h2 data-tr="Hakkımda" data-ru="Обо мне">Обо мне</h2>
+    <p data-tr="Yazılım geliştirme tutkunu bir geliştirici olarak web ve backend teknolojilerinde projeler üretiyorum. Amacım modern, etkili ve kullanıcı dostu deneyimler yaratmak." 
+       data-ru="Разработчик, увлеченный программированием, создаю проекты на веб и бэкенд технологиях. Моя цель — создавать современные и удобные для пользователя решения.">
+       Разработчик, увлеченный программированием, создаю проекты на веб и бэкенд технологиях. Моя цель — создавать современные и удобные для пользователя решения.
     </p>
   </section>
 
   <!-- Contact Section -->
   <section class="contact container">
-    <h2>İletişim</h2>
-    <a href="mailto:gizem@example.com">Email</a>
-    <a href="https://github.com/gizemnwr" target="_blank">GitHub</a>
-    <a href="https://linkedin.com/in/gizemnwr" target="_blank">LinkedIn</a>
+    <h2 data-tr="İletişim" data-ru="Контакты">Контакты</h2>
+    <a href="mailto:gizem@example.com" data-tr="Email" data-ru="Почта">Почта</a>
+    <a href="https://github.com/gizemnwr" target="_blank" data-tr="GitHub" data-ru="GitHub">GitHub</a>
+    <a href="https://linkedin.com/in/gizemnwr" target="_blank" data-tr="LinkedIn" data-ru="LinkedIn">LinkedIn</a>
   </section>
 
   <!-- Footer -->
@@ -94,12 +100,12 @@
     &copy; 2025 Gizem N. Tüm hakları saklıdır.
   </footer>
 
-  <!-- Simple Fade-in Animation for Scroll -->
+  <!-- Scripts -->
   <script>
+    // Scroll Fade-in Animation
     const faders = document.querySelectorAll('section');
     const options = { threshold:0.2 };
-
-    const observer = new IntersectionObserver(function(entries, observer){
+    const observer = new IntersectionObserver(function(entries){
       entries.forEach(entry => {
         if(entry.isIntersecting){
           entry.target.style.opacity = 1;
@@ -114,6 +120,23 @@
       section.style.transform = 'translateY(50px)';
       observer.observe(section);
     });
+
+    // Language Switcher
+    const trBtn = document.getElementById('tr');
+    const ruBtn = document.getElementById('ru');
+
+    function switchLanguage(lang){
+      document.querySelectorAll('[data-tr]').forEach(el=>{
+        el.innerText = el.getAttribute('data-'+lang);
+      });
+    }
+
+    // Başlangıç dili Rusça
+    let currentLang = 'ru';
+    switchLanguage(currentLang);
+
+    trBtn.addEventListener('click',()=>{ currentLang='tr'; switchLanguage('tr'); });
+    ruBtn.addEventListener('click',()=>{ currentLang='ru'; switchLanguage('ru'); });
   </script>
 
 </body>
