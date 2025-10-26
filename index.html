@@ -17,6 +17,7 @@
     header { text-align:center; padding:100px 20px; position:relative; }
     .language-switcher { position:absolute; top:20px; right:20px; }
     .language-switcher img { width:30px; cursor:pointer; margin-left:10px; }
+
     header h1 { font-size:3rem; margin-bottom:10px; opacity:0; transform:translateY(30px); animation:fadeUp 1s forwards; }
     header p { font-size:1.2rem; opacity:0; transform:translateY(30px); animation:fadeUp 1s forwards; animation-delay:0.3s; }
 
@@ -102,41 +103,42 @@
 
   <!-- Scripts -->
   <script>
-    // Scroll Fade-in Animation
-    const faders = document.querySelectorAll('section');
-    const options = { threshold:0.2 };
-    const observer = new IntersectionObserver(function(entries){
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = 'translateY(0)';
-          entry.target.style.transition = 'all 1s ease';
-        }
-      });
-    }, options);
+    document.addEventListener("DOMContentLoaded", function() {
+      // Scroll Fade-in Animation
+      const faders = document.querySelectorAll('section');
+      const options = { threshold:0.2 };
+      const observer = new IntersectionObserver(function(entries){
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+            entry.target.style.transition = 'all 1s ease';
+          }
+        });
+      }, options);
 
-    faders.forEach(section => {
-      section.style.opacity = 0;
-      section.style.transform = 'translateY(50px)';
-      observer.observe(section);
+      faders.forEach(section => {
+        section.style.opacity = 0;
+        section.style.transform = 'translateY(50px)';
+        observer.observe(section);
+      });
+
+      // Language Switcher
+      const trBtn = document.getElementById('tr');
+      const ruBtn = document.getElementById('ru');
+
+      function switchLanguage(lang){
+        document.querySelectorAll('[data-tr]').forEach(el=>{
+          el.innerText = el.getAttribute('data-'+lang);
+        });
+      }
+
+      // Başlangıç dili Rusça
+      switchLanguage('ru');
+
+      trBtn.addEventListener('click',()=>{ switchLanguage('tr'); });
+      ruBtn.addEventListener('click',()=>{ switchLanguage('ru'); });
     });
-
-    // Language Switcher
-    const trBtn = document.getElementById('tr');
-    const ruBtn = document.getElementById('ru');
-
-    function switchLanguage(lang){
-      document.querySelectorAll('[data-tr]').forEach(el=>{
-        el.innerText = el.getAttribute('data-'+lang);
-      });
-    }
-
-    // Başlangıç dili Rusça
-    let currentLang = 'ru';
-    switchLanguage(currentLang);
-
-    trBtn.addEventListener('click',()=>{ currentLang='tr'; switchLanguage('tr'); });
-    ruBtn.addEventListener('click',()=>{ currentLang='ru'; switchLanguage('ru'); });
   </script>
 
 </body>
