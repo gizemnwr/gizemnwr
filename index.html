@@ -14,50 +14,68 @@
     .container { max-width:1000px; margin:0 auto; padding:20px; }
 
     /* Header */
-    header { text-align:center; padding:100px 20px; position:relative; }
+    header { text-align:center; padding:80px 20px; position:relative; }
     .language-switcher { position:absolute; top:20px; right:20px; }
-    .language-switcher img { width:30px; cursor:pointer; margin-left:10px; }
+    .language-switcher img { width:34px; cursor:pointer; margin-left:8px; border-radius:4px; border:2px solid transparent; }
+    .language-switcher img.active { border-color:#1abc9c; }
 
-    header h1 { font-size:3rem; margin-bottom:10px; opacity:0; transform:translateY(30px); animation:fadeUp 1s forwards; }
-    header p { font-size:1.2rem; opacity:0; transform:translateY(30px); animation:fadeUp 1s forwards; animation-delay:0.3s; }
+    header h1 { font-size:2.6rem; margin-bottom:14px; opacity:0; transform:translateY(20px); animation:fadeUp 0.8s forwards; }
+    header .subtitle { font-size:1rem; max-width:900px; margin:0 auto; color:#cdd6df; opacity:0; transform:translateY(20px); animation:fadeUp 0.8s forwards; animation-delay:0.2s; }
 
     /* Keyframes */
     @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
 
     /* Section Titles */
-    section h2 { font-size:2rem; margin-bottom:20px; text-align:center; }
+    section h2 { font-size:1.8rem; margin-bottom:18px; text-align:center; }
 
     /* Projects */
-    .projects { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
-    .project-card { background:#161b22; padding:20px; border-radius:10px; transition:transform 0.3s, box-shadow 0.3s; }
-    .project-card:hover { transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,255,200,0.2); }
-    .project-card h3 { margin-bottom:10px; }
+    .projects { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:18px; }
+    .project-card { background:#161b22; padding:16px; border-radius:10px; transition:transform 0.25s, box-shadow 0.25s; }
+    .project-card:hover { transform:translateY(-8px); box-shadow:0 10px 20px rgba(0,255,200,0.08); }
+    .project-card h3 { margin-bottom:8px; }
     .project-card p { font-size:0.9rem; color:#aaa; }
 
     /* About */
-    .about { text-align:center; padding:50px 20px; }
-    .about p { max-width:600px; margin:0 auto; color:#ccc; }
+    .about { padding:30px 20px; }
+    .about .bio { max-width:900px; margin:0 auto; color:#d0d6db; font-size:0.98rem; }
+    .about .bio p { margin-bottom:12px; }
 
     /* Contact */
-    .contact { text-align:center; padding:50px 20px; }
-    .contact a { margin:0 10px; font-weight:bold; }
+    .contact { text-align:center; padding:30px 20px; }
+    .contact a { margin:0 10px; font-weight:600; color:#cfeee0; }
 
     /* Footer */
-    footer { text-align:center; padding:30px 10px; font-size:0.8rem; color:#555; }
+    footer { text-align:center; padding:20px 10px; font-size:0.8rem; color:#6b6f76; }
+
+    /* Responsive tweaks */
+    @media (max-width:600px){ header{padding:60px 16px;} header h1{font-size:1.8rem;} }
   </style>
 </head>
 <body>
 
   <!-- Header / Hero Section -->
   <header>
-    <div class="language-switcher">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Flag_of_Turkey.svg" id="tr">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" id="ru">
+    <div class="language-switcher" aria-label="language switcher">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Flag_of_Turkey.svg" id="tr" alt="Turkish flag" title="Türkçe">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" id="ru" alt="Russian flag" title="Русский">
     </div>
+
     <h1 data-tr="Merhaba, Ben Gizem" data-ru="Привет, я Гизем">Привет, я Гизем</h1>
-    <p data-tr="Yazılım geliştirici & interaktif portföy" data-ru="Разработчик программного обеспечения & интерактивное портфолио">
-      Разработчик программного обеспечения & интерактивное портфолио
-    </p>
+
+    <!-- Yeni uzun metin paragraflar halinde; hem Türkçe hem Rusça eklenmiş -->
+    <div class="subtitle" aria-live="polite">
+      <div class="bio-lines">
+        <p data-tr="Ben Gizem Nur Yıldız, Bursa Kız Lisesi 12. sınıf öğrencisiyim. Lise hayatım boyunca akademik ve sosyal alanlarda kendimi geliştirmek için çeşitli projelerde yer aldım." data-ru="Я Гизем Нур Йылдыз, ученица 12 класса женской школы Бурсы. На протяжении всей школьной жизни я участвовала в различных проектах, развивая себя как в академической, так и в социальной сферах.">Я Гизем Нур Йылдыз, ученица 12 класса женской школы Бурсы. На протяжении всей школьной жизни я участвовала в различных проектах, развивая себя как в академической, так и в социальной сферах.</p>
+
+        <p data-tr="Teknofest’te liseler arası insansız hava aracı kategorisinde yarıştım. MEB Robot Yarışması’na ise çizgi izleyen robot, labirent ustası ve serbest proje kategorilerinde katıldım. Ayrıca iWISE uluslararası yarışlarında çizgi izleyen robot kategorisinde ulusal çapta altın madalya kazanarak ülkemi global finalde temsil ettim. Tübitak 4006 Bilim Fuarı’na iki farklı robotik projeyle katılım sağladım." data-ru="Я участвовала в Teknofest в категории беспилотных летательных аппаратов среди школ. В соревнованиях Министерства образования по робототехнике я выступала в категориях: следящий за линией робот, мастер лабиринта и свободный проект. Кроме того, на международных соревнованиях iWISE я завоевала золотую медаль на национальном уровне в категории следящих за линией роботов и представляла свою страну в глобальном финале. Я также участвовала в Научной ярмарке TÜBİTAK 4006 с двумя разными робототехническими проектами.">Я участвовала в Teknofest в категории беспилотных летательных аппаратов среди школ. В соревнованиях Министерства образования по робототехнике я выступала в категориях: следящий за линией робот, мастер лабиринта и свободный проект. Кроме того, на международных соревнованиях iWISE я завоевала золотую медаль на национальном уровне в категории следящих за линией роботов и представляла свою страну в глобальном финале. Я также участвовала в Научной ярмарке TÜBİTAK 4006 с двумя разными робототехническими проектами.</p>
+
+        <p data-tr="Okul içi faaliyetlerde de aktif rol aldım. Okulumuz dergisinin editörlüğünü yürüttüm ve teknoloji ile uluslararası proje kulüplerinin kuruluşundan itibaren kulüp başkanlığını üstlenerek çeşitli etkinlikler ve projeler organize ettim." data-ru="Я активно участвовала и в школьной жизни. Была редактором школьного журнала и, возглавляя клубы технологий и международных проектов с момента их основания, организовывала различные мероприятия и проекты.">Я активно участвовала и в школьной жизни. Была редактором школьного журнала и, возглавляя клубы технологий и международных проектов с момента их основания, организовывала различные мероприятия и проекты.</p>
+
+        <p data-tr="Kendimi sürekli geliştirmek için yazılım alanında Python, C/C++, HTML/CSS öğrendim. Bunun yanı sıra grafik tasarım, mekanik ve elektronik ile ilgilenerek çok yönlü bir yetkinlik kazandım. Ayrıca Yandex Dzen üzerinde yazılım, siber güvenlik ve teknoloji konularında yazılar yazdığım Rusça bir blogum bulunmaktadır." data-ru="Чтобы постоянно развиваться, я изучила Python, C/C++, HTML/CSS. Также, занимаясь графическим дизайном, механикой и электроникой, получила многопрофильные навыки. Кроме того, у меня есть русскоязычный блог на платформе Yandex Dzen, где я пишу статьи о программировании, кибербезопасности и технологиях.">Чтобы постоянно развиваться, я изучила Python, C/C++, HTML/CSS. Также, занимаясь графическим дизайном, механикой и электроникой, получила многопрофильные навыки. Кроме того, у меня есть русскоязычный блог на платформе Yandex Dzen, где я пишу статьи о программировании, кибербезопасности и технологиях.</p>
+
+        <p data-tr="2026 hedeflerim arasında bir girişimcilik zirvesi düzenlemek, CTF yarışlarına hazırlanmak ve Yandex Dzen blogumu büyüterek Rusya’da yazılıma ilgi duyan gençler arasında bir topluluk oluşturmak yer almaktadır." data-ru="Мои цели на 2026 год включают организацию предпринимательского саммита, подготовку к соревнованиям CTF и развитие блога Yandex Dzen для создания сообщества среди молодежи России, интересующейся программированием.">Мои цели на 2026 год включают организацию предпринимательского саммита, подготовку к соревнованиям CTF и развитие блога Yandex Dzen для создания сообщества среди молодежи России, интересующейся программированием.</p>
+      </div>
+    </div>
   </header>
 
   <!-- Projects Section -->
@@ -82,10 +100,18 @@
   <!-- About Section -->
   <section class="about container">
     <h2 data-tr="Hakkımda" data-ru="Обо мне">Обо мне</h2>
-    <p data-tr="Yazılım geliştirme tutkunu bir geliştirici olarak web ve backend teknolojilerinde projeler üretiyorum. Amacım modern, etkili ve kullanıcı dostu deneyimler yaratmak." 
-       data-ru="Разработчик, увлеченный программированием, создаю проекты на веб и бэкенд технологиях. Моя цель — создавать современные и удобные для пользователя решения.">
-       Разработчик, увлеченный программированием, создаю проекты на веб и бэкенд технологиях. Моя цель — создавать современные и удобные для пользователя решения.
-    </p>
+    <div class="bio">
+      <!-- ayni metin burada da paragraflar halinde tekrar ekleniyor, uygun semantik icin -->
+      <p data-tr="Ben Gizem Nur Yıldız, Bursa Kız Lisesi 12. sınıf öğrencisiyim. Lise hayatım boyunca akademik ve sosyal alanlarda kendimi geliştirmek için çeşitli projelerde yer aldım." data-ru="Я Гизем Нур Йылдыз, ученица 12 класса женской школы Бурсы. На протяжении всей школьной жизни я участвовала в различных проектах, развивая себя как в академической, так и в социальной сферах.">Я Гизем Нур Йылдыз, ученица 12 класса женской школы Бурсы. На протяжении всей школьной жизни я участвовала в различных проектах, развивая себя как в академической, так и в социальной сферах.</p>
+
+      <p data-tr="Teknofest’te liseler arası insansız hava aracı kategorisinde yarıştım. MEB Robot Yarışması’na ise çizgi izleyen robot, labirent ustası ve serbest proje kategorilerinde katıldım. Ayrıca iWISE uluslararası yarışlarında çizgi izleyen robot kategorisinde ulusal çapta altın madalya kazanarak ülkemi global finalde temsil ettim. Tübitak 4006 Bilim Fuarı’na iki farklı robotik projeyle katılım sağladım." data-ru="Я участвовала в Teknofest в категории беспилотных летательных аппаратов среди школ. В соревнованиях Министерства образования по робототехнике я выступала в категориях: следящий за линией робот, мастер лабиринта и свободный проект. Кроме того, на международных соревнованиях iWISE я завоевала золотую медаль на национальном уровне в категории следящих за линией роботов и представляла свою страну в глобальном финале. Я также участвовала в Научной ярмарке TÜBİTAK 4006 с двумя разными робототехническими проектами.">Я участвовала в Teknofest в категории беспилотных летательных аппаратов среди школ. В соревнованиях Министерства образования по робототехнике я выступала в категориях: следящий за линией робот, мастер лабиринта и свободный проект. Кроме того, на международных соревнованиях iWISE я завоевала золотую медаль на национальном уровне в категории следящих за линией роботов и представляла свою страну в глобальном финале. Я также участвовала в Научной ярмарке TÜBİTAK 4006 с двумя разными робототехническими проектами.</p>
+
+      <p data-tr="Okul içi faaliyetlerde de aktif rol aldım. Okulumuz dergisinin editörlüğünü yürüttüm ve teknoloji ile uluslararası proje kulüplerinin kuruluşundan itibaren kulüp başkanlığını üstlenerek çeşitli etkinlikler ve projeler organize ettim." data-ru="Я активно участвовала и в школьной жизни. Была редактором школьного журнала и, возглавляя клубы технологий и международных проектов с момента их основания, организовывала различные мероприятия и проекты.">Я активно участвовала и в школьной жизни. Была редактором школьного журнала и, возглавляя клубы технологий и международных проектов с момента их основания, организовывала различные мероприятия и проекты.</p>
+
+      <p data-tr="Kendimi sürekli geliştirmek için yazılım alanında Python, C/C++, HTML/CSS öğrendim. Bunun yanı sıra grafik tasarım, mekanik ve elektronik ile ilgilenerek çok yönlü bir yetkinlik kazandım. Ayrıca Yandex Dzen üzerinde yazılım, siber güvenlik ve teknoloji konularında yazılar yazdığım Rusça bir blogum bulunmaktadır." data-ru="Чтобы постоянно развиваться, я изучила Python, C/C++, HTML/CSS. Также, занимаясь графическим дизайном, механикой и электроникой, получила многопрофильные навыки. Кроме того, у меня есть русскоязычный блог на платформе Yandex Dzen, где я пишу статьи о программировании, кибербезопасности и технологиях.">Чтобы постоянно развиваться, я изучила Python, C/C++, HTML/CSS. Также, занимаясь графическим дизайном, механикой и электроникой, получила многопрофильные навыки. Кроме того, у меня есть русскоязычный блог на платформе Yandex Dzen, где я пишу статьи о программировании, кибербезопасности и технологиях.</p>
+
+      <p data-tr="2026 hedeflerim arasında bir girişimcilik zirvesi düzenlemek, CTF yarışlarına hazırlanmak ve Yandex Dzen blogumu büyüterek Rusya’da yazılıma ilgi duyan gençler arasında bir topluluk oluşturmak yer almaktadır." data-ru="Мои цели на 2026 год включают организацию предпринимательского саммита, подготовку к соревнованиям CTF и развитие блога Yandex Dzen для создания сообщества среди молодежи России, интересующейся программированием.">Мои цели на 2026 год включают организацию предпринимательского саммита, подготовку к соревнованиям CTF и развитие блога Yandex Dzen для создания сообщества среди молодежи России, интересующейся программированием.</p>
+    </div>
   </section>
 
   <!-- Contact Section -->
@@ -112,14 +138,14 @@
           if(entry.isIntersecting){
             entry.target.style.opacity = 1;
             entry.target.style.transform = 'translateY(0)';
-            entry.target.style.transition = 'all 1s ease';
+            entry.target.style.transition = 'all 0.9s ease';
           }
         });
       }, options);
 
       faders.forEach(section => {
         section.style.opacity = 0;
-        section.style.transform = 'translateY(50px)';
+        section.style.transform = 'translateY(30px)';
         observer.observe(section);
       });
 
@@ -131,6 +157,11 @@
         document.querySelectorAll('[data-tr]').forEach(el=>{
           el.innerText = el.getAttribute('data-'+lang);
         });
+        // mark active flag
+        document.querySelectorAll('.language-switcher img').forEach(img=>img.classList.remove('active'));
+        document.getElementById(lang).classList.add('active');
+        // set html lang
+        document.documentElement.lang = (lang === 'tr') ? 'tr' : 'ru';
       }
 
       // Başlangıç dili Rusça
