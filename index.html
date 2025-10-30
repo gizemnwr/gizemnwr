@@ -3,22 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gizem's Portfolio</title>
-  <!-- Google Fonts -->
+  <title>Gizem Nur Yıldız</title>
+  
+  <!-- yazı tipi -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Global Styles */
+    
+    /* genel görünüm */
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
     body { background-color:#0d1117; color:#fff; line-height:1.6; }
-    a { color:#1abc9c; text-decoration:none; }
-    .container { max-width:1000px; margin:0 auto; padding:20px; }
+    a {
+  color: #e36fb3;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
 
-    /* Header */
+a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #e36fb3;
+}
+    
+    /* üst bölüm (header) */
     header { text-align:center; padding:100px 20px; position:relative; }
     .language-switcher { position:absolute; top:20px; right:20px; }
     .language-switcher img { width:30px; cursor:pointer; margin-left:10px; }
 
-    header h1 { font-size:3rem; margin-bottom:10px; opacity:0; transform:translateY(30px); animation:fadeUp 1s forwards; }
+    header h1 { 
+  font-size:3rem; 
+  margin-bottom:10px; 
+  opacity:0; 
+  transform:translateY(30px); 
+  animation:fadeUp 1s forwards; 
+  color: #e36fb3; /* Başlık rengi pembe */
+}
+
     header p { font-size:1.2rem; opacity:0; transform:translateY(30px); animation:fadeUp 1s forwards; animation-delay:0.3s; }
 
     /* Keyframes */
@@ -27,24 +45,27 @@
     /* Section Titles */
     section h2 { font-size:2rem; margin-bottom:20px; text-align:center; }
 
-    /* Projects */
+    /* projeler */
     .projects { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
     .project-card { background:#161b22; padding:20px; border-radius:10px; transition:transform 0.3s, box-shadow 0.3s; }
-    .project-card:hover { transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,255,200,0.2); }
+    .project-card:hover {
+  transform:translateY(-10px);
+  box-shadow:0 10px 20px rgba(227,111,179,0.4); /* pembe neon efekti */
+}
     .project-card h3 { margin-bottom:10px; }
     .project-card p { font-size:0.9rem; color:#aaa; }
 
-    /* About */
+    /* hakkımda */
     .about { text-align:center; padding:50px 20px; }
     .about p { max-width:600px; margin:0 auto; color:#ccc; }
 
-    /* Contact */
+    /* iletişim */
     .contact { text-align:center; padding:50px 20px; }
     .contact a { margin:0 10px; font-weight:bold; }
 
-    /* Footer */
+    /* alt bilgi (footer) */
     footer { text-align:center; padding:30px 10px; font-size:0.8rem; color:#555; }
-  </style>
+ </style>
 </head>
 <body>
 
@@ -54,30 +75,76 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Flag_of_Turkey.svg" id="tr">
       <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" id="ru">
     </div>
-    <h1 data-tr="Merhaba, Ben Gizem" data-ru="Привет, я Гизем">Привет, я Гизем</h1>
-    <p data-tr="Yazılım geliştirici & interaktif portföy" data-ru="Разработчик программного обеспечения & интерактивное портфолио">
-      Разработчик программного обеспечения & интерактивное портфолио
-    </p>
+    <h1 data-tr="Merhaba, Ben Gizem Nur Yıldız" data-ru="Привет, я Гизем Нур Йылдыз">Привет, я Гизем Нур Йылдыз</h1>
+  <div class="bio">
+  <p data-tr="Ben Gizem Nur Yıldız. Bursa Kız Lisesi 12. sınıf öğrencisiyim. Lise hayatım boyunca çeşitli projelerde yer alarak farklı alanlarda kendimi geliştirdim ve teknolojiyi aktif olarak takip ettim."
+     data-ru="Я Гизем Нур Йылдыз. Я ученица 12 класса женской школы Бурсы. На протяжении всей школьной жизни я участвовала в различных проектах, развивая себя в разных областях и активно следя за технологиями.">
+  </p>
+
+  <p data-tr="Teknofest’te liseler arası insansız hava aracı kategorisinde yarıştım. MEB Robot Yarışması’nda çizgi izleyen robot, labirent ustası ve serbest proje kategorilerinde katıldım. IWISE uluslararası yarışlarında çizgi izleyen robot kategorisinde ulusal çapta altın madalya kazanarak ülkemizi global finalde temsil ettim. Ayrıca TÜBİTAK 4006 Bilim Fuarı’na iki farklı robotik projeyle katılım sağladım."
+     data-ru="Я участвовала в Teknofest в категории беспилотных летательных аппаратов среди школ. В соревнованиях Министерства образования по робототехнике я выступала в категориях: следящий за линией робот, мастер лабиринта и свободный проект. На международных соревнованиях IWISE я завоевала золотую медаль на национальном уровне в категории следящих за линией роботов и представляла нашу страну в глобальном финале. Также я принимала участие в Научной ярмарке TÜBİTAK 4006 с двумя различными робототехническими проектами.">
+  </p>
+
+  <p data-tr="Okulumuz teknoloji ve uluslararası proje kulübünün kuruluşundan itibaren başkanlık yaptım ve çeşitli kulüp faaliyetlerini organize ettim. Bunun yanı sıra okulumuz dergisinde editörlük görevini üstlendim."
+     data-ru="Я возглавляла школьный клуб технологий и международных проектов с момента его основания и организовывала различные мероприятия клуба. Кроме того, я выполняла обязанности редактора школьного журнала.">
+  </p>
+
+  <p data-tr="Kişisel gelişimime önem vererek yazılım alanında Python, C/C++, HTML/CSS gibi programlama dillerinde kendimi geliştirdim. Ayrıca grafik tasarım, mekanik ve elektronik konularında da ilgileniyorum. Yandex Dzen üzerinde yazılım, siber güvenlik ve teknoloji konularında yazılar yazdığım bir Rusça blogum bulunmaktadır."
+     data-ru="Ставлю личное развитие на первый план, изучая программирование на Python, C/C++, HTML/CSS. Также интересуюсь графическим дизайном, механикой и электроникой. У меня есть русскоязычный блог на Yandex Dzen, где я пишу статьи о программировании, кибербезопасности и технологиях.">
+  </p>
+
+  <p data-tr="2026 hedeflerim arasında bir girişimcilik zirvesi düzenlemek ve Yandex Dzen blogumu büyüterek Rusya’daki genç yazılım meraklılarından oluşan bir kitle oluşturmak yer almaktadır."
+     data-ru="Мои цели на 2026 год включают организацию предпринимательского саммита и развитие моего блога на Yandex Dzen, чтобы создать сообщество молодых энтузиастов программирования в России.">
+  </p>
+</div>
+
   </header>
 
-  <!-- Projects Section -->
-  <section class="projects-section container">
-    <h2 data-tr="Projelerim" data-ru="Мои проекты">Мои проекты</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3 data-tr="Proje 1" data-ru="Проект 1">Проект 1</h3>
-        <p data-tr="React ile yapılmış modern web uygulaması." data-ru="Современное веб-приложение на React.">Современное веб-приложение на React.</p>
-      </div>
-      <div class="project-card">
-        <h3 data-tr="Proje 2" data-ru="Проект 2">Проект 2</h3>
-        <p data-tr="Node.js & Express API geliştirme projesi." data-ru="Проект по разработке API на Node.js & Express.">Проект по разработке API на Node.js & Express.</p>
-      </div>
-      <div class="project-card">
-        <h3 data-tr="Proje 3" data-ru="Проект 3">Проект 3</h3>
-        <p data-tr="Python & Flask ile veri analizi uygulaması." data-ru="Приложение для анализа данных на Python & Flask.">Приложение для анализа данных на Python & Flask.</p>
-      </div>
+ <!-- Certificates Section -->
+<section class="certificates-section container">
+  <h2 data-tr="Sertifikalarım" data-ru="Мои сертификаты">Мои сертификаты</h2>
+  <div class="certificates">
+    <div class="certificate-card">
+      <h3 data-tr="Python Programlama Sertifikası" data-ru="Сертификат по программированию на Python">Сертификат по программированию на Python</h3>
+      <p data-tr="Python dilinde temel ve ileri seviye programlama eğitimi." data-ru="Обучение основам и продвинутому программированию на Python.">Обучение основам и продвинутому программированию на Python.</p>
     </div>
-  </section>
+    <div class="certificate-card">
+      <h3 data-tr="Robotik Sertifikası" data-ru="Сертификат по робототехнике">Сертификат по робототехнике</h3>
+      <p data-tr="MEB Robot Yarışması ve iWISE yarışlarında kazandığım başarıların belgesi." data-ru="Документ, подтверждающий мои достижения на конкурсах Министерства образования и iWISE.">Документ, подтверждающий мои достижения на конкурсах Министерства образования и iWISE.</p>
+    </div>
+    <div class="certificate-card">
+      <h3 data-tr="Teknofest Katılım Belgesi" data-ru="Сертификат участия в Teknofest">Сертификат участия в Teknofest</h3>
+      <p data-tr="Liseler arası insansız hava aracı yarışına katılım belgesi." data-ru="Документ об участии в соревновании беспилотных летательных аппаратов среди школ.">Документ об участии в соревновании беспилотных летательных аппаратов среди школ.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Sertifikalar Grid ve Kartlar */
+.certificates { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); 
+  gap: 20px; 
+}
+.certificate-card { 
+  background: #161b22; 
+  padding: 20px; 
+  border-radius: 10px; 
+  transition: transform 0.3s, box-shadow 0.3s; 
+}
+.certificate-card:hover { 
+  transform: translateY(-10px); 
+  box-shadow: 0 0 20px #e36fb3, 0 0 40px #e36fb3, 0 0 60px #e36fb3; 
+}
+.certificate-card h3 { 
+  margin-bottom: 10px; 
+}
+.certificate-card p { 
+  font-size: 0.9rem; 
+  color: #aaa; 
+}
+</style>
+
 
   <!-- About Section -->
   <section class="about container">
