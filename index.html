@@ -8,35 +8,31 @@
   <!-- yazı tipi -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    
     /* genel görünüm */
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
     body { background-color:#0d1117; color:#fff; line-height:1.6; }
     a {
-  color: #e36fb3;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
+      color: #e36fb3;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #e36fb3;
+    }
 
-a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px #e36fb3;
-}
-    
     /* üst bölüm (header) */
     header { text-align:center; padding:100px 20px; position:relative; }
     .language-switcher { position:absolute; top:20px; right:20px; }
     .language-switcher img { width:30px; cursor:pointer; margin-left:10px; }
-
     header h1 { 
-  font-size:3rem; 
-  margin-bottom:10px; 
-  opacity:0; 
-  transform:translateY(30px); 
-  animation:fadeUp 1s forwards; 
-  color: #e36fb3; /* Başlık rengi pembe */
-}
-
+      font-size:3rem; 
+      margin-bottom:10px; 
+      opacity:0; 
+      transform:translateY(30px); 
+      animation:fadeUp 1s forwards; 
+      color: #e36fb3;
+    }
     header p { font-size:1.2rem; opacity:0; transform:translateY(30px); animation:fadeUp 1s forwards; animation-delay:0.3s; }
 
     /* Keyframes */
@@ -49,52 +45,56 @@ a:hover {
     .projects { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
     .project-card { background:#161b22; padding:20px; border-radius:10px; transition:transform 0.3s, box-shadow 0.3s; }
     .project-card:hover {
-  transform:translateY(-10px);
-  box-shadow:0 10px 20px rgba(227,111,179,0.4); /* pembe neon efekti */
-}
+      transform:translateY(-10px);
+      box-shadow:0 10px 20px rgba(227,111,179,0.4);
+    }
     .project-card h3 { margin-bottom:10px; }
     .project-card p { font-size:0.9rem; color:#aaa; }
 
     /* teknik yeterlilikler */
     .about { text-align:center; padding:50px 20px; }
     .about p { max-width:600px; margin:0 auto; color:#ccc; }
+    .about h3 {
+      color: #e36fb3;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .about ul {
+      list-style: disc inside;
+      color: #ccc;
+      margin-bottom: 15px;
+    }
 
     /* Diller Bölümü */
-.languages {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.language-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.language-card {
-  background: #161b22;
-  border-radius: 10px;
-  padding: 15px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.language-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 20px #e36fb3, 0 0 40px rgba(227,111,179,0.5);
-}
-
-.language-card h3 {
-  color: #e36fb3;
-  margin-bottom: 5px;
-  font-size: 1.1rem;
-}
-
-.language-card p {
-  color: #aaa;
-  font-size: 0.9rem;
-}
-
+    .languages {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .language-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .language-card {
+      background: #161b22;
+      border-radius: 10px;
+      padding: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .language-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px #e36fb3, 0 0 40px rgba(227,111,179,0.5);
+    }
+    .language-card h3 {
+      color: #e36fb3;
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
+    .language-card p {
+      color: #aaa;
+      font-size: 0.9rem;
+    }
 
     /* iletişim */
     .contact { text-align:center; padding:50px 20px; }
@@ -113,70 +113,57 @@ a:hover {
       <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" id="ru">
     </div>
     <h1 data-tr="Merhaba, Ben Gizem Nur Yıldız" data-ru="Привет, я Гизем Нур Йылдыз">Привет, я Гизем Нур Йылдыз</h1>
-  <div class="bio">
-  
   </header>
 
-<!-- Projects Section -->
-<section class="projects-section container">
-  <h2 data-tr="Projelerim" data-ru="Мои проекты">Мои проекты</h2>
-  <div class="projects">
-    <div class="project-card">
-      <h3 data-tr="İnsansız Hava Aracı Projesi" data-ru="Проект беспилотного летательного аппарата">Проект беспилотного летательного аппарата</h3>
-      <p data-tr="Teknofest’te liseler arası insansız hava aracı yarışması için geliştirdiğim proje." data-ru="Проект, разработанный для участия в школьных соревнованиях Teknofest по беспилотным летательным аппаратам.">Проект, разработанный для участия в школьных соревнованиях Teknofest по беспилотным летательным аппаратам.</p>
+  <!-- Projects Section -->
+  <section class="projects-section container">
+    <h2 data-tr="Projelerim" data-ru="Мои проекты">Мои проекты</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3 data-tr="İnsansız Hava Aracı Projesi" data-ru="Проект беспилотного летательного аппарата">Проект беспилотного летательного аппарата</h3>
+        <p data-tr="Teknofest’te liseler arası insansız hava aracı yarışması için geliştirdiğim proje." data-ru="Проект, разработанный для участия в школьных соревнованиях Teknofest по беспилотным летательным аппаратам.">Проект, разработанный для участия в школьных соревнованиях Teknofest по беспилотным летательным аппаратам.</p>
+      </div>
+
+      <div class="project-card">
+        <h3 data-tr="Çizgi İzleyen Robot" data-ru="Робот, следующий по линии">Робот, следующий по линии</h3>
+        <p data-tr="MEB Robot Yarışması ve IWISE yarışlarında başarı kazandığım çizgi izleyen robot projem." data-ru="Проект робота, следующего по линии, с которым я добилась успеха на конкурсах Министерства образования и IWISE.">Проект робота, следующего по линии, с которым я добилась успеха на конкурсах Министерства образования и IWISE.</p>
+      </div>
+
+      <div class="project-card">
+        <h3 data-tr="TÜBİTAK 4006 Bilim Fuarı Projeleri" data-ru="Проекты для научной ярмарки TÜBİTAK 4006">Проекты для научной ярмарки TÜBİTAK 4006</h3>
+        <p data-tr="TÜBİTAK 4006 Bilim Fuarı’na sunduğum iki farklı robotik proje." data-ru="Два различных проекта по робототехнике, представленных на научной ярмарке TÜBİTAK 4006.">Два различных проекта по робототехнике, представленных на научной ярмарке TÜBİTAK 4006.</p>
+      </div>
     </div>
-
-    <div class="project-card">
-      <h3 data-tr="Çizgi İzleyen Robot" data-ru="Робот, следующий по линии">Робот, следующий по линии</h3>
-      <p data-tr="MEB Robot Yarışması ve IWISE yarışlarında başarı kazandığım çizgi izleyen robot projem." data-ru="Проект робота, следующего по линии, с которым я добилась успеха на конкурсах Министерства образования и IWISE.">Проект робота, следующего по линии, с которым я добилась успеха на конкурсах Министерства образования и IWISE.</p>
-    </div>
-
-    <div class="project-card">
-      <h3 data-tr="TÜBİTAK 4006 Bilim Fuarı Projeleri" data-ru="Проекты для научной ярмарки TÜBİTAK 4006">Проекты для научной ярмарки TÜBİTAK 4006</h3>
-      <p data-tr="TÜBİTAK 4006 Bilim Fuarı’na sunduğum iki farklı robotik proje." data-ru="Два различных проекта по робототехнике, представленных на научной ярмарке TÜBİTAK 4006.">Два различных проекта по робототехнике, представленных на научной ярмарке TÜBİTAK 4006.</p>
-    </div>
-  </div>
-</section>
-
-<style>
-/* Projeler Grid ve Kartlar */
-.projects { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); 
-  gap: 20px; 
-}
-.project-card { 
-  background: #161b22; 
-  padding: 20px; 
-  border-radius: 10px; 
-  transition: transform 0.3s, box-shadow 0.3s; 
-}
-.project-card:hover { 
-  transform: translateY(-10px); 
-  box-shadow: 0 0 20px #e36fb3, 0 0 40px #e36fb3, 0 0 60px #e36fb3; 
-}
-.project-card h3 { 
-  margin-bottom: 10px; 
-}
-.project-card p { 
-  font-size: 0.9rem; 
-  color: #aaa; 
-}
-</style>
-
-
-
-    <!-- Technical Skills Section -->
-  <section class="about container">
-    <h2 data-tr="Teknik Yeterlilikler" data-ru="Технические навыки">Технические навыки</h2>
-    <p 
-      data-tr="Web geliştirme, backend mimarisi ve robotik sistemler üzerinde deneyim sahibiyim. Python, JavaScript, HTML, CSS ve C++ dillerinde projeler geliştiriyorum. Ayrıca veri tabanı yönetimi ve API entegrasyonu konularında çalışıyorum." 
-      data-ru="Имею опыт в веб-разработке, серверной архитектуре и робототехнических системах. Разрабатываю проекты на Python, JavaScript, HTML, CSS и C++. Также работаю с базами данных и интеграцией API.">
-      Имею опыт в веб-разработке, серверной архитектуре и робототехнических системах. Разрабатываю проекты на Python, JavaScript, HTML, CSS и C++. Также работаю с базами данных и интеграцией API.
-    </p>
   </section>
 
-    <!-- Languages Section -->
+  <!-- Technical Skills Section -->
+  <section class="about container">
+    <h2 data-tr="Teknik Yeterlilikler" data-ru="Технические навыки">Технические навыки</h2>
+
+    <!-- Programlama Dilleri -->
+    <h3 data-tr="Programlama Dilleri" data-ru="Языки программирования">Языки программирования</h3>
+    <ul>
+      <li>Python</li>
+      <li>C / C++</li>
+      <li>HTML / CSS</li>
+    </ul>
+
+    <!-- Tasarım ve Görselleştirme -->
+    <h3 data-tr="Tasarım ve Görselleştirme" data-ru="Дизайн и визуализация">Дизайн и визуализация</h3>
+    <ul>
+      <li>Grafik Tasarım (Canva)</li>
+      <li>SolidWorks (Temel düzeyde 3B modelleme)</li>
+    </ul>
+
+    <!-- Mekanik ve Elektronik -->
+    <h3 data-tr="Mekanik ve Elektronik" data-ru="Механика и электроника">Механика и электроника</h3>
+    <ul>
+      <li>Tinkercad (Elektronik devre ve mekanik sistem simülasyonu)</li>
+      <li>Mekanik ve elektronik sistemlere temel düzeyde ilgi ve uygulama deneyimi</li>
+    </ul>
+  </section>
+
+  <!-- Languages Section -->
   <section class="languages container">
     <h2 data-tr="Diller" data-ru="Языки">Языки</h2>
     <div class="language-cards">
@@ -198,8 +185,6 @@ a:hover {
       </div>
     </div>
   </section>
-
-
 
   <!-- Contact Section -->
   <section class="contact container">
