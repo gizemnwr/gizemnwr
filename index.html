@@ -23,10 +23,27 @@
 
    /* üst bölüm (header) */
 header { 
-  text-align:center; 
-  padding:100px 20px; 
-  position:relative; 
+  text-align: center; 
+  padding: 100px 20px; 
+  position: relative; 
 }
+
+.hero-subtext {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #ffffff;
+  opacity: 0.85;
+}
+
+.hero-code {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #e36fb3;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+
 
 .language-switcher { 
   position:absolute; 
@@ -140,18 +157,63 @@ header p {
 
     /* alt bilgi (footer) */
     footer { text-align:center; padding:30px 10px; font-size:0.8rem; color:#555; }
+
+    /* AeroBurevestnik Section */
+.aero-vision {
+  margin-top: 80px;
+  padding: 40px 20px;
+  background: rgba(22, 27, 34, 0.6);
+  border-radius: 12px;
+}
+
+.aero-vision h2 {
+  color: #e36fb3;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.aero-vision p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #ffffff;
+  opacity: 0.9;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+    
  </style>
 </head>
 <body>
 
   <!-- Header / Hero Section -->
-  <header>
-    <div class="language-switcher">
-  <span id="tr" title="Türkçe">🇹🇷</span>
-  <span id="ru" title="Русский">🇷🇺</span>
-</div>
-    <h1 data-tr="Merhaba, Ben Gizem Nur Yıldız" data-ru="Привет, я Гизем Нур Йылдыз">Привет, я Гизем Нур Йылдыз</h1>
-  </header>
+<header>
+  <div class="language-switcher">
+    <span id="tr" title="Türkçe">🇹🇷</span>
+    <span id="ru" title="Русский">🇷🇺</span>
+  </div>
+
+  <h1 
+    data-tr="Merhaba, Ben Gizem Nur Yıldız" 
+    data-ru="Привет, я Гизем Нур Йылдыз">
+    Привет, я Гизем Нур Йылдыз
+  </h1>
+
+  <p class="hero-subtext"
+     data-tr="Bu web sitesi tamamen tarafımdan tasarlanmış ve geliştirilmiştir."
+     data-ru="Этот веб-сайт полностью спроектирован и разработан мной.">
+     Этот веб-сайт полностью спроектирован и разработан мной.
+  </p>
+
+  <p class="hero-code"
+     data-tr="TUR-10584/26"
+     data-ru="TUR-10584/26">
+     TUR-10584/26
+  </p>
+
+</header>
+
 
 <!-- Projects Section -->
 <section class="projects-section container">
@@ -365,6 +427,22 @@ header p {
 </section>
 
 
+<!-- AeroBurevestnik Vision Section -->
+<section class="aero-vision">
+  <h2 
+    data-tr="AeroBurevestnik" 
+    data-ru="АэроБуревестник">
+    АэроБуревестник
+  </h2>
+
+  <p
+    data-tr="Mezuniyet sonrası hedefim, Rusya’da AeroBurevestnik adını verdiğim havacılık ve İHA/SİHA üretim şirketimi kurmaktır. Şirket, tamamen yerli üretim ve ileri teknolojiyle Rusya’nın havacılık ve savunma alanında dışa bağımlılığını azaltmayı amaçlamaktadır; zira ülkenin İHA/SİHA ihtiyacının yaklaşık %65’i hâlen ithalatla karşılanmaktadır. Başlangıçta küçük ölçekli üretim ve yazılım çözümleriyle işe başlayacak, zamanla yerli üretim tesisleri ve Ar-Ge merkezleri kurarak yüksek teknolojiye sahip sistemler geliştireceğim. Bu süreç, istihdam yaratacak, ihracatı artıracak ve Rusya’nın stratejik sanayi altyapısını güçlendirecektir. AeroBurevestnik, gökyüzünde yükseliyor; hazır olun, fırtına geliyor."
+    
+    data-ru="Моя цель после окончания обучения — создать в России авиационную компанию по производству БПЛА и ударных БПЛА под названием «АэроБуревестник». Компания нацелена на снижение внешней зависимости России в сфере авиации и обороны за счёт полностью отечественного производства и передовых технологий, поскольку около 65% потребности страны в БПЛА и ударных БПЛА в настоящее время покрывается за счёт импорта. На начальном этапе я планирую начать с маломасштабного производства и программных решений, а со временем создать отечественные производственные мощности и научно-исследовательские центры для разработки высокотехнологичных систем. Этот процесс создаст новые рабочие места, увеличит экспортный потенциал и укрепит стратегическую промышленную инфраструктуру России. «АэроБуревестник» поднимается в небо — приготовьтесь, буря надвигается.">
+
+    Моя цель после окончания обучения — создать в России авиационную компанию по производству БПЛА и ударных БПЛА под названием «АэроБуревестник». Компания нацелена на снижение внешней зависимости России в сфере авиации и обороны за счёт полностью отечественного производства и передовых технологий, поскольку около 65% потребности страны в БПЛА и ударных БПЛА в настоящее время покрывается за счёт импорта. На начальном этапе я планирую начать с маломасштабного производства и программных решений, а со временем создать отечественные производственные мощности и научно-исследовательские центры для разработки высокотехнологичных систем. Этот процесс создаст новые рабочие места, увеличит экспортный потенциал и укрепит стратегическую промышленную инфраструктуру России. «АэроБуревестник» поднимается в небо — приготовьтесь, буря надвигается.
+  </p>
+</section>
 
   <!-- Languages Section -->
   <section class="languages container">
@@ -376,11 +454,11 @@ header p {
       </div>
       <div class="language-card">
         <h3 data-tr="İngilizce" data-ru="Английский">Английский</h3>
-        <p data-tr="A2 Seviyesi" data-ru="Уровень A2">Уровень A2</p>
+        <p data-tr="B1 Seviyesi" data-ru="Уровень B1">Уровень B1</p>
       </div>
       <div class="language-card">
         <h3 data-tr="Rusça" data-ru="Русский">Русский</h3>
-        <p data-tr="A1 Seviyesi" data-ru="Уровень A1">Уровень A1</p>
+        <p data-tr="A2 Seviyesi" data-ru="Уровень A2">Уровень A2</p>
       </div>
       <div class="language-card">
         <h3 data-tr="Almanca" data-ru="Немецкий">Немецкий</h3>
