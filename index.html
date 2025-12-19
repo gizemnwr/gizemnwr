@@ -105,8 +105,7 @@ header p {
   color: #fff; /* beyaz açıklama metni */
 }
 
-
-  /* teknik yeterlilikler */
+/* teknik yeterlilikler */
 .about {
   text-align: center;
   padding: 50px 20px;
@@ -124,6 +123,7 @@ header p {
   margin-bottom: 10px;
 }
 
+/* UL ve LI ayarları */
 .about ul {
   list-style: disc inside;
   color: #ccc;
@@ -131,13 +131,21 @@ header p {
   padding: 0;
 }
 
-.about li {
+/*KRİTİK: li artık yatay */
+.about ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ortalı kalsın */
+  gap: 8px;
   margin-bottom: 6px;
 }
 
-/* 🔗 Sertifika linkleri (PEMBE – Python sertifikası gibi) */
+/* sertifika linkleri (Python / Canva ile aynı stil) */
 .about a.certificate-link {
-  margin-left: 8px;
+  display: inline-flex;        /*  alt satırı öldüren satır */
+  align-items: center;
+  white-space: nowrap;         /* yazı bölünmesin */
+  margin-left: 6px;
   font-size: 0.9rem;
   color: #e36fb3 !important;
   text-decoration: none;
@@ -147,6 +155,7 @@ header p {
 .about a.certificate-link:hover {
   text-decoration: underline;
 }
+
 
 
 
